@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommunityCard = ({ community, onJoin, onLeave }) => {
     const { id, name, description, membersCount, isJoined } = community;
-
+    
     return (
         <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <h3 className="text-xl font-bold text-gray-800 mb-2">{name}</h3>

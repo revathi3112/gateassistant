@@ -16,6 +16,8 @@ const StudentDashboard = () => {
     // Dummy student data (replace with actual data from backend)
     const student = {
         name: 'John Doe',
+        email: "john@example.com",
+        phone: "+1234567890",
         branch: 'Computer Science',
         year: '3rd Year',
     };

@@ -6,7 +6,8 @@ import StudentDashboard from './pages/StudentDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Navbar from './components/Navbar';
 import ProfileCompletionModal from './components/ProfileCompletionModal';
-
+import FacultyAuthPage from './pages/FacultyAuthPage';
+import AdminAuthPage from './pages/AdminAuthPage';
 const App = () => {
   return (
     <Router>
@@ -36,7 +37,8 @@ const AppContent = () => {
         <Route path="/signup" element={<AuthPage />} />
         <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
-
+        <Route path="/faculty" element={<FacultyAuthPage/>}/>
+        <Route path="/admin" element={<AdminAuthPage/>}/>
       </Routes>
     </>
   );

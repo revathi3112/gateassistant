@@ -22,12 +22,7 @@ const Hero = () => {
                     >
                         Get Started
                     </Link>
-                    <Link
-                        to="/quizzes" // Link to quizzes page (you can create this later)
-                        className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300"
-                    >
-                        Explore Quizzes
-                    </Link>
+                    
                 </div>
             </div>
         </div>

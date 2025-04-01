@@ -14,7 +14,7 @@ const AuthPage = () => {
         } else {
             // Redirect to the dashboard or home page
         }
-    };
+    }; 
 
     const handleProfileSubmit = (formData) => {
         console.log('Profile Data:', formData);
@@ -112,6 +112,22 @@ const AuthPage = () => {
                                 required
                             />
                         </div>
+                        <div>
+    <label className="block text-gray-700 mb-2" htmlFor="phone">Phone number:</label>
+    <input
+        type="tel"
+        id="phone"
+        className="w-full minimal-input"
+        placeholder="Enter your 10-digit phone number"
+        required
+        maxlength="10"  // Restrict input to 10 digits
+        onInput={(e) => {
+            // Remove any non-numeric characters and update the value
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        }}
+    />
+</div>
+
                         <div>
                             <label className="block text-gray-700 mb-2">Password:</label>
                             <input
