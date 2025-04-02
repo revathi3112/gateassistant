@@ -5,9 +5,11 @@ import AuthPage from './pages/AuthPage';
 import StudentDashboard from './pages/StudentDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Navbar from './components/Navbar';
-import ProfileCompletionModal from './components/ProfileCompletionModal';
 import FacultyAuthPage from './pages/FacultyAuthPage';
 import AdminAuthPage from './pages/AdminAuthPage';
+import FacultyDashboard from './pages/FacultyDashboard';
+import Algorithms from './pages/study-materials/Algorithms'; // Import only Algorithms
+
 const App = () => {
   return (
     <Router>
@@ -17,20 +19,22 @@ const App = () => {
 };
 
 const AppContent = () => {
-  const location = useLocation(); // Get the current route
+  const location = useLocation();
 
-  // Define routes where the Navbar should be hidden
-  const hideNavbarRoutes = ['/student-dashboard', '/admin-dashboard'];
+  // Hide navbar on dashboard pages
+  const hideNavbarRoutes = [
+    '/student-dashboard',
+    '/admin-dashboard',
+    '/faculty-dashboard',
+    '/algorithms' // Add this if you want to hide navbar on algorithms page
+  ];
 
-  // Check if the current route is in the hideNavbarRoutes array
   const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   return (
     <>
-      {/* Conditionally render the Navbar */}
       {shouldShowNavbar && <Navbar />}
 
-      {/* Define your routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<AuthPage />} />
@@ -39,6 +43,10 @@ const AppContent = () => {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/faculty" element={<FacultyAuthPage/>}/>
         <Route path="/admin" element={<AdminAuthPage/>}/>
+        <Route path="/faculty-dashboard" element={<FacultyDashboard/>}/>
+        
+        {/* Only Algorithms route */}
+        <Route path="/algorithms" element={<Algorithms />} />
       </Routes>
     </>
   );
